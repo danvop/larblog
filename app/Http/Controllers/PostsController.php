@@ -38,7 +38,7 @@ class PostsController extends Controller
         //dd($errors);
         Post::create(request(['title', 'body']));
 
-        return redirect('/');
+        return redirect('/blog');
     }
 }
 

@@ -5,7 +5,7 @@
 <div class="col-sm-8 blog-main">
 <h2>Create a Post</h2>
 <hr>
-<form method="POST" action="/posts">
+<form method="POST" action="/blog/posts">
     {{ csrf_field() }}
   <div class="form-group">
     <label for="title">Title</label>
@@ -18,7 +18,7 @@
   </div>
   
   <div class="form-group">
-  <button action="post/create" type="submit" class="btn btn-primary">Submit</button>  
+  <button type="submit" class="btn btn-primary">Submit</button>  
   </div>
   
   @include('layouts.errors')

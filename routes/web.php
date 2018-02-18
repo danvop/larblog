@@ -13,17 +13,17 @@ use App\Task;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/', 'PostsController@index');
+Route::get('/blog', 'PostsController@index');
 
-Route::get('/posts/create', 'PostsController@create');
+Route::get('/blog/posts/create', 'PostsController@create');
 
-Route::get('/posts/{post}', 'PostsController@show');
+Route::get('/blog/posts/{post}', 'PostsController@show');
 
-Route::post('/posts', 'PostsController@store');
+Route::post('/blog/posts', 'PostsController@store');
 
 Route::get('/tasks', 'TasksController@index');
 
