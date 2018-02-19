@@ -32,6 +32,11 @@ class Post extends Model
         return preg_match($cutter, $this->body, $matches) ? $matches[0] : $this->body;
     }
 
+    public function addComment($body)
+    {
+        $this->comments()->create(compact('body'));
+    }
+
     public function comments()
     {
         return $this->hasMany(Comment::class);

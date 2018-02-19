@@ -26,6 +26,24 @@
 
                 
             </ul>
+            <hr>
+            <div class="card">
+                <div class="card-body">
+                    <form method="POST" action="/blog/{{ $post->id }}/comments">
+                        {{ csrf_field() }}
+                        <div class="form-group">
+                            <textarea id="body" name="body" class="form-control" placeholder="Your comment here" required></textarea>
+                        </div>
+                      
+                        <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Submit</button>  
+                        </div>
+                      
+                      @include('layouts.errors')
+
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div> <!-- /.blog-main -->

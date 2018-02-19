@@ -24,6 +24,7 @@ Route::get('/blog/posts/create', 'PostsController@create');
 Route::get('/blog/posts/{post}', 'PostsController@show');
 
 Route::post('/blog/posts', 'PostsController@store');
+Route::post('/blog/{post}/comments', 'CommentsController@store');
 
 Route::get('/tasks', 'TasksController@index');
 
