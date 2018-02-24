@@ -11,9 +11,10 @@ class Post extends Model
 {
     protected $fillable = [
         'title',
-        'body'
+        'body',
+        'user_id'
     ];
-    //
+    
     public function postDate()
     {
 
@@ -25,6 +26,10 @@ class Post extends Model
         return $dt->diffForHumans();;
     }
 
+    /**
+     * Return Post body above $cutter
+     * @return [type] [description]
+     */
     public function postCuttedBody()
     {
         $cutter = "/.*(?=<a name=\"cut\"><\/a>)/s";
