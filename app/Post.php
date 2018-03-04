@@ -19,7 +19,7 @@ class Post extends Model
     public function postDate()
     {
 
-        setlocale(LC_TIME, 'ru_RU.UTF-8');
+        // setlocale(LC_TIME, 'ru_RU.UTF-8');
         Carbon::setLocale('ru');
         
         $dt = $this->created_at;

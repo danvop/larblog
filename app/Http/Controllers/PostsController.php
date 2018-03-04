@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Repositories\Posts;
 use App\Task;
-
 use Illuminate\Http\Request;
 
 class PostsController extends Controller

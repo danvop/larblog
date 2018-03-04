@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Billing\Stripe;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,6 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        //add App\Post::archives to every view
         \View::composer('layouts.sidebar', function ($view) {
             $view->with('archives', \App\Post::archives());
         });
@@ -25,6 +27,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        
     }
 }
