@@ -22,6 +22,13 @@
     <header>
       @include('layouts.nav')
       
+      @if ($flash = session('message'))
+        <div id="flash-message" class="alert alert-success alert-dismissible">
+          {{ $flash }}
+        </div>
+      @endif
+
+
       <div class="blog-header">
         <div class="container">
           <h1 class="blog-title">The Bootstrap Blog</h1>
@@ -47,3 +54,4 @@
     
     </body>
 </html>
+
