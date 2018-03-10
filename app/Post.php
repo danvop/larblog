@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Comment;
+use App\Tag;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
@@ -41,7 +42,9 @@ class Post extends Model
 
     public function addComment($body)
     {
-        $this->comments()->create(compact('body'));
+        $user_id = auth()->user()->id;
+        //dd($user_id);
+        $this->comments()->create(compact('body', 'user_id'));
     }
 
     public function user()
@@ -72,6 +75,11 @@ class Post extends Model
         ->orderByRaw('min(created_at) desc')
         ->get()
         ->toArray();
+    }
+
+    public function tags()
+    {
+       return $this->belongsToMany(Tag::class);
     }
 
 }

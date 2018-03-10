@@ -13,6 +13,7 @@ class CommentsController extends Controller
             'body' => 'required|min:2'
         ]);
 
+
         $post->addComment(request('body'));
 
         
