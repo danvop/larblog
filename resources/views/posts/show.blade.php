@@ -10,6 +10,20 @@
         {{ $post->user->name }}
         {{ $post->postDate() ?? $post->updated_at }}
         </p>
+
+        @if (count($post->tags))
+            <ul>
+                @foreach ($post->tags as $tag)
+                    <li>
+                        <a href="/blog/posts/tags/{{ $tag->name }}">
+                            {{ $tag->name }}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+
+        @endif
+
         {!! $post->body !!}
         
         <hr>

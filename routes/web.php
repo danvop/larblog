@@ -10,7 +10,10 @@ Route::get('/blog', 'PostsController@index')->name('home');
 //posts 
 Route::get('/blog/posts/create', 'PostsController@create');
 Route::get('/blog/posts/{post}', 'PostsController@show');
+Route::get('/blog/posts/tags/{tag}', 'TagsController@index');
 Route::post('/blog/posts', 'PostsController@store');
+
+
 
 //comments
 Route::post('/blog/{post}/comments', 'CommentsController@store');
